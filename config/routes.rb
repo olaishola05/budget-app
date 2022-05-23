@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :transacts, only: %i[new create destroy]
   end
 
-  root "categories#index"
+  root "splash_screen#index"
 end
