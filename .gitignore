@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+# .gitignore
+node_modules/
+
+.vscode/
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
