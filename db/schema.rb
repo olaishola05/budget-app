@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_23_094857) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_24_111900) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_094857) do
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "transacts", force: :cascade do |t|
@@ -28,7 +30,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_094857) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.index ["category_id"], name: "index_transacts_on_category_id"
+    t.index ["user_id"], name: "index_transacts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,4 +60,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_094857) do
   end
 
   add_foreign_key "transacts", "categories"
+  add_foreign_key "transacts", "users"
 end

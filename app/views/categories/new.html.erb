@@ -1,0 +1,18 @@
+<div class='login'>
+  <h2>Add category</h2>
+  <%= form_for(@category) do |f| %>
+    <div class="field">
+      <% f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'E.g Groceries' %>
+    </div>
+
+    <div class="field">
+      <% f.label :icon %><br />
+      <%= f.text_field :icon, autocomplete: "icon", placeholder: 'Link to category icon'%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Save", class: "submit"%>
+    </div>
+  <% end %>
+</div>

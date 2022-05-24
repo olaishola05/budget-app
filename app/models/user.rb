@@ -4,7 +4,10 @@ class User < ApplicationRecord
   # has_secure_password
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
+
+  has_many :category
+  has_many :transact
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, length: { maximum: 255 }
