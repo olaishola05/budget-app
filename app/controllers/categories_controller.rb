@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   def show
     @user = current_user
     @category = Category.find(params[:id])
-    # @transacts = @category.transacts.all
+    # @transacts = @category.transacts
   end
 
   def new

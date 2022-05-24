@@ -21,11 +21,15 @@ class TransactsController < ApplicationController
 
   # POST /transacts or /transacts.json
   def create
+    @user = current_user
+    @category = Category.find(params[:id])
     @transact = Transact.new(transact_params)
+    @transact.category_id = @category.id
+    @transact.user_id = @user.id
 
     respond_to do |format|
       if @transact.save
-        format.html { redirect_to transact_url(@transact), notice: "Transact was successfully created." }
+        format.html { redirect_to category_transacts_path, notice: "Transact was successfully created." }
         format.json { render :show, status: :created, location: @transact }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +69,6 @@ class TransactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transact_params
-      params.require(:transact).permit(:name, :amount, :categories, :category_id)
+      params.require(:transact).permit(:name, :amount, :categories)
     end
 end
