@@ -1,13 +1,14 @@
 class CategoriesController < ApplicationController
   def index
     @user = current_user
-    @categories = Category.includes(:transact).all
+    @categories = Category.includes(:transact).where(user_id: @user.id)
   end
 
   def show
     @user = current_user
     @category = Category.find(params[:id])
-    # @transacts = @category.transacts
+    @transacts = Transact.includes(:category).where(category_id: @category.id)
+    @transacts = @transacts.where(user_id: @user.id) if @user
   end
 
   def new

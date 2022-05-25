@@ -1,9 +1,12 @@
 class TransactsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_transact, only: %i[ show edit update destroy ]
 
   # GET /transacts or /transacts.json
   def index
-    @transacts = Transact.all
+    @user = current_user
+    @transacts = Transact.includes(:category).where(category_id: params[:category_id]).order(created_at: :desc)
+    @transacts = @transacts.where(user_id: @user.id) if @user
   end
 
   # GET /transacts/1 or /transacts/1.json
@@ -22,9 +25,9 @@ class TransactsController < ApplicationController
   # POST /transacts or /transacts.json
   def create
     @user = current_user
-    @category = Category.find(params[:id])
+    # @category = Category.find(params[:id])
     @transact = Transact.new(transact_params)
-    @transact.category_id = @category.id
+    @transact.category_id = params[:category_id]
     @transact.user_id = @user.id
 
     respond_to do |format|
@@ -69,6 +72,6 @@ class TransactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transact_params
-      params.require(:transact).permit(:name, :amount, :categories)
+      params.permit(:name, :amount, :categories, :category_id)
     end
 end

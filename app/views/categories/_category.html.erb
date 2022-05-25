@@ -1,9 +1,8 @@
 <div class='category'>
 
     <div class='cat-item'>
-        <%= @user.name %>
         <img src= "#{category.icon}">
-        Transaction Total: <%= 'Total Goes here' %>
+        Transaction Total: <%= category.transact.map {|ct| ct.amount}.sum %>
         <%= link_to 'View details', category_path(category.id)%>
     </div>
 </div>

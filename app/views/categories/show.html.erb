@@ -1,11 +1,16 @@
 <div>
     <%= link_to '< Back to categories', categories_path%>
-    <%# if @transacts.empty? %>
-        <p>No Transaction for this category</p>
-    <%#else%>
-        <%# @transacts.each do |t| %>
-            <%# <p>hello</p> %>
-        <%#end%>
-    <%#end%>
+    <h1>Transacts</h1> <%= current_user.name%>
 
+<div id="transacts">
+  <% if @transacts.empty? %>
+    <p>No transaction for this category</p>
+    <% else %>
+        <% @transacts.each do |transact| %>
+            <%= render transact %>
+        <% end %>
+    <% end %>
+</div>
+<%= link_to "add a new category", new_category_path %>
+<%console%>
 </div>
