@@ -1,0 +1,36 @@
+@import 'partials/variables';
+
+.categories{
+    background-color: $bg-color;
+
+    .category{
+        width: 95%;
+        margin: 0 auto;
+        background-color: #fff;
+        .cat-link{
+            text-decoration: none;
+            color: $text-color;
+        }
+
+        .cat-item{
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            padding: $spacing;
+
+
+
+            .cat-image{
+                width: 25px;
+                height: 25px;
+
+
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
