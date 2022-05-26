@@ -15,7 +15,9 @@
         <% end %>
     </div>
 
-    <div>
-        <%= link_to 'Add new category', new_category_path %>
-    </div>
+    <% if can? :create, Category%>
+        <div>
+             <%= link_to 'Add new category', new_category_path %>
+        </div>
+    <%end%>
 </div>

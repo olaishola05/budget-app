@@ -1,4 +1,5 @@
-<div id="<%= dom_id transact %>">
+<% if can? :read, transact %>
+  <div id="<%= dom_id transact %>">
   <p>
     <strong>Name:</strong>
     <%= transact.name %>
@@ -19,3 +20,5 @@
     <%= transact.category_id %>
   </p>
 </div>
+
+<%end%>
