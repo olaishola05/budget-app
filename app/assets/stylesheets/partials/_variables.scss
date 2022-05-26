@@ -1,0 +1,48 @@
+// Colors
+
+$primary-color: #3778c2;
+$secondary-color: #5fb523;
+$text-color: #434b54;
+$bg-color: #f5f5f5;
+$spacing: 1rem;
+
+
+// display
+@mixin named-grid($name, $columns, $gutter) {
+  .grid_#{$name} {
+    display: grid;
+    grid-template-columns: repeat(#{$columns}, 1fr);
+    grid-column-gap: #{$gutter};
+    grid-row-gap: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin background-color($color) {
+  background-color: #{$color};
+}
+
+@mixin display-flex($direction) {
+  display: flex;
+  flex-direction: #{$direction};
+}
+
+
+@mixin container($width, $direction) {
+    @include display-flex($direction);
+  width: #{$width};
+  margin: 0 auto;
+}
+
+@mixin center-content($width, $margin) {
+  width: #{$width};
+  margin: $margin auto;
+}
+
+@mixin button($width, $radius, $color, $text_color) {
+  width: #{$width};
+  border-radius: #{$radius};
+  background-color: #{$color};
+  color: #{$text_color};
+}
