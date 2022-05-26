@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :categories, style: "display: block" %>
-    <%= form.text_field :categories %>
+    <%= form.select :category.name, @categories.map{ |category| [category.name, category.id] } %>
   </div>
 
   <div>
