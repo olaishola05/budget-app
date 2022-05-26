@@ -26,7 +26,6 @@ class TransactsController < ApplicationController
   # POST /transacts or /transacts.json
   def create
     @user = current_user
-    # @category = Category.find(params[:id])
     @transact = Transact.new(transact_params)
     @transact.category_id = params[:category_id]
     @transact.user_id = @user.id

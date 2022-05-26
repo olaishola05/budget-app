@@ -26,7 +26,7 @@
                 font-size: 1rem;
             }
 
-            input[type="email"], input[type="password"], input[type="text"]{
+            input[type="email"], input[type="password"], input[type="text"], input[type="url"]{
                 width: 100%;
                 padding: $spacing - .5rem;
                 color: $text-color;
