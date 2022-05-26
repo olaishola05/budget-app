@@ -1,4 +1,5 @@
-<%= form_with model: @transacts, url: category_transacts_path do |form| %>
+<div class='login'>
+    <%= form_with model: @transacts, url: category_transacts_path do |form| %>
   <% if transact.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(transact.errors.count, "error") %> prohibited this transact from being saved:</h2>
@@ -30,3 +31,5 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+</div>
