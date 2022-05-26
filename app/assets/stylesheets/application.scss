@@ -14,7 +14,11 @@
  *= require_self
  */
 
+ @import 'partials/variables';
  @import 'partials/reset';
  @import 'partials/typography';
- @import 'partials/variables';
- @import 'partials/splash'
+ @import 'partials/splash';
+ @import 'partials/nav';
+
+
+
