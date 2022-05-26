@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories, only: %i[index new create show] do
-    resources :transacts, only: %i[index new create destroy]
+    resources :transacts, only: %i[index new create]
   end
 
   root "splash_screen#index"

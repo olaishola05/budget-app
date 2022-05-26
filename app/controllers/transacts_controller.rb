@@ -15,6 +15,7 @@ class TransactsController < ApplicationController
 
   # GET /transacts/new
   def new
+    @categories = Category.all
     @transact = Transact.new
   end
 
