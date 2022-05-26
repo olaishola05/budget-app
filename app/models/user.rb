@@ -13,4 +13,11 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }
 
+
+  ROLES = %i[admin member moderator manager].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
+
 end
