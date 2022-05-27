@@ -1,24 +1,16 @@
 <% if can? :read, transact %>
-  <div id="<%= dom_id transact %>">
-  <p>
-    <strong>Name:</strong>
-    <%= transact.name %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= transact.amount %>
-  </p>
-
-  <p>
-    <strong>Categories:</strong>
-    <%= transact.category.name %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= transact.category_id %>
-  </p>
-</div>
+  <div class='transact-item'>
+    <div id="<%= dom_id transact %>" class='item-info'>
+      <span><%= transact.name %></span>
+      <span>
+        <strong>Amount:</strong>
+          $<%= transact.amount %>
+      </span>
+      <p>
+        <strong>Date:</strong>
+        <%= transact.created_at %>
+      </p>
+    </div>
+  </div>
 
 <%end%>
