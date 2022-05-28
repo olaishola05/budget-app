@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :category
   has_many :transact
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { in: 6..25 }
   validates :email, presence: true, length: { maximum: 255 }
   validates :password, presence: true, length: { minimum: 6 }
 
