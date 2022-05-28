@@ -1,0 +1,19 @@
+<div class='categories'>
+    <h1>CATEGORIES</h1>
+    <div>
+        <% if @categories.empty? %>
+            <p class='msg'>Click below button to add new categories</p>
+
+        <% else %>
+            <% @categories.each do |category|%>
+                <%= render category %>
+            <%end%>
+        <% end %>
+    </div>
+
+    <% if can? :create, Category%>
+        <div class='btn-container'>
+             <button type='button' class='add-btn'><%= link_to 'Add new category', new_category_path %></button>
+        </div>
+    <%end%>
+</div>

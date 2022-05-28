@@ -1,0 +1,76 @@
+@import 'partials/variables';
+
+.categories {
+  background-color: $bg-color;
+  position: relative;
+  width: 100%;
+  min-height: 605px;
+  overflow: auto;
+
+  h1 {
+    color: #fff;
+    background-color: $primary-color;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  .msg {
+    padding: $spacing;
+    font-style: italic;
+    background-color: #fff;
+  }
+
+  .category {
+    width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+
+    .cat-link {
+      text-decoration: none;
+      color: $text-color;
+    }
+
+    .cat-item {
+      margin-top: 10px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      padding: $spacing + 0.1rem 3px;
+
+      .cat-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .btn-container {
+    background-color: $secondary-color;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: $spacing;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .add-btn {
+      @include button(90%, 5px, $secondary-color, white);
+
+      border: 1px solid white;
+      padding: $spacing;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
