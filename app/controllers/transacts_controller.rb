@@ -1,7 +1,7 @@
 class TransactsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
-  before_action :set_transact, :set_select_collections, only: %i[ show edit update destroy ]
+  before_action :set_transact, :set_select_collections, only: %i[show edit update destroy]
 
   # GET /transacts or /transacts.json
   def index
@@ -12,8 +12,7 @@ class TransactsController < ApplicationController
   end
 
   # GET /transacts/1 or /transacts/1.json
-  def show
-  end
+  def show; end
 
   # GET /transacts/new
   def new
@@ -22,8 +21,7 @@ class TransactsController < ApplicationController
   end
 
   # GET /transacts/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /transacts or /transacts.json
   def create
@@ -34,7 +32,7 @@ class TransactsController < ApplicationController
 
     respond_to do |format|
       if @transact.save
-        format.html { redirect_to category_transacts_path, notice: "Transact was successfully created." }
+        format.html { redirect_to category_transacts_path, notice: 'Transact was successfully created.' }
         format.json { render :show, status: :created, location: @transact }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -47,7 +45,7 @@ class TransactsController < ApplicationController
   def update
     respond_to do |format|
       if @transact.update(transact_params)
-        format.html { redirect_to transact_url(@transact), notice: "Transact was successfully updated." }
+        format.html { redirect_to transact_url(@transact), notice: 'Transact was successfully updated.' }
         format.json { render :show, status: :ok, location: @transact }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -61,23 +59,24 @@ class TransactsController < ApplicationController
     @transact.destroy
 
     respond_to do |format|
-      format.html { redirect_to transacts_url, notice: "Transact was successfully destroyed." }
+      format.html { redirect_to transacts_url, notice: 'Transact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_transact
-      @transact = Transact.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def transact_params
-      params.permit(:name, :amount, :categories, :category_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_transact
+    @transact = Transact.find(params[:id])
+  end
 
-    def set_select_collections
-      @categories = Category.all.map { |c| [ c.name, c.id ] }
-    end
+  # Only allow a list of trusted parameters through.
+  def transact_params
+    params.permit(:name, :amount, :categories, :category_id)
+  end
+
+  def set_select_collections
+    @categories = Category.all.map { |c| [c.name, c.id] }
+  end
 end

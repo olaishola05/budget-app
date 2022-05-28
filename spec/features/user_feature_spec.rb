@@ -45,7 +45,7 @@ RSpec.describe 'Feature User login', type: :feature do
     fill_in 'Password', with: user.password
     click_button 'Log in'
 
-    expect(page).to have_current_path("/categories")
+    expect(page).to have_current_path('/categories')
     expect(page).to have_content('Signed in successfully.')
   end
 end

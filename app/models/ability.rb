@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -9,7 +7,6 @@ class Ability
     user_privilege(user) if user.is? :member
     manager_privilege if user.is? :manager
     moderator_privilege if user.is? :moderator
-
   end
 
   private

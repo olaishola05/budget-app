@@ -6,7 +6,6 @@
                     <%= image_tag category.icon %>
                 </div>
                 <span><%= current_user.name %></span>
-                <span><%= category.name %></span>
                 Total: $<%= category.transact.map {|ct| ct.amount}.sum %>
             </div>
         <%end%>

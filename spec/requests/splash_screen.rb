@@ -22,7 +22,5 @@ RSpec.describe 'SplashsScreen', type: :request do
       expect(response.body).to include('Login')
       expect(response.body).to include('Sign up')
     end
-
   end
-
 end

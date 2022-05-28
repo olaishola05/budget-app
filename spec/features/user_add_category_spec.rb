@@ -5,7 +5,6 @@ RSpec.describe 'Feature User login', type: :feature do
     visit new_user_session_path
   end
 
-
   context 'Test Login page content' do
     it 'should have a email input field' do
       expect(page).to have_field('Email')
@@ -30,7 +29,7 @@ RSpec.describe 'Feature User login', type: :feature do
 
     click_link 'Add new category'
 
-    expect(page).to have_current_path("/categories/new")
+    expect(page).to have_current_path('/categories/new')
   end
 
   it 'Presence of Add category select field' do

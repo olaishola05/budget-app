@@ -1,116 +1,118 @@
 @import 'partials/variables';
 
-.transacts{
+.transacts {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: $bg-color;
+
+  h1 {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: $spacing - 0.3rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  h2 {
+    color: $text-color;
+    text-align: right;
+    padding: $spacing - 0.3rem;
+    font-size: 1.5rem;
+    background: white;
+  }
+
+  h3 {
+    color: $text-color;
+    padding: $spacing - 0.7rem;
+    font-size: 1.5rem;
+  }
+
+  .transact-img-container {
     width: 100%;
-    position: relative;
-    height: 100vh;
-    background-color: $bg-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    padding: 10px 5px;
+    border-bottom: 1px solid gray;
 
-    h1{
-        background-color: $primary-color;
-        color: white;
-        text-align: center;
-        padding: $spacing - .3rem;
-        text-transform: uppercase;
-        font-size: 2rem;
-    }
+    .transact-img {
+      width: 60px;
+      height: 60px;
 
-    h2{
-        color: $text-color;
-        text-align: right;
-        padding: $spacing - .3rem;
-        font-size: 1.5rem;
-        background: white;
-    }
-
-    h3{
-        color: $text-color;
-        padding: $spacing - .7rem;
-        font-size: 1.5rem;
-    }
-
-    .transact-img-container{
+      img {
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
-        gap: 10px;
-        padding: 10px 5px;
-        border-bottom: 1px solid gray;
+        object-fit: cover;
+      }
+    }
+  }
 
-        .transact-img{
-            width: 60px;
-            height: 60px;
+  .msg {
+    padding: $spacing;
+    font-style: italic;
+    background-color: #fff;
+  }
 
-            img{
-                width: 100%;
-                object-fit: cover;
-            }
-        }
+  .transact-item {
+    width: 95%;
+    background-color: white;
+    padding: $spacing - 0.5rem;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 10px;
+
+    .item-info {
+      display: flex;
+      flex-direction: column;
     }
 
-    .msg{
-        padding: $spacing;
-        font-style: italic;
-        background-color: #fff;
+    span,
+    p {
+      font-size: 1rem;
     }
+  }
 
-    .transact-item{
-        width: 95%;
-        background-color: white;
-        padding: $spacing - .5rem;
-        margin: 0 auto;
-        display: flex;
-        margin-bottom: 10px;
+  .btn-container {
+    background-color: $secondary-color;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: $spacing;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        .item-info{
-            display: flex;
-            flex-direction: column;
-        }
+    .add-btn {
+      @include button(90%, 5px, $secondary-color, white);
 
-        span, p{
-            font-size: 1rem;
-        }
-    }
+      border: 1px solid white;
+      padding: $spacing;
 
-    .btn-container{
-        background-color: $secondary-color;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        padding: $spacing;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .add-btn{
-            @include button(90%, 5px, $secondary-color, white);
-            border: 1px solid white;
-            padding: $spacing;
-
-            a{
-                color: #fff;
-                text-decoration: none;
-                font-size: 1.2rem;
-            }
-        }
-    }
-
-    .back{
-        width: 100px;
+      a {
+        color: #fff;
         text-decoration: none;
         font-size: 1.2rem;
-        margin: 0 auto;
-        padding-top: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        a{
-            text-decoration: none;
-            color: gray;
-            padding-bottom: 20px;
-        }
+      }
     }
+  }
+
+  .back {
+    width: 100px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .back-btn {
+      text-decoration: none;
+      color: gray;
+      padding-bottom: 20px;
+    }
+  }
 }

@@ -10,7 +10,8 @@
             "apply",
             "variants",
             "responsive",
-            "screen"
+            "screen",
+            "function", "if", "each", "include", "mixin"
           ]
         }
       ],

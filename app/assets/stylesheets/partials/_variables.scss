@@ -6,7 +6,6 @@ $text-color: #434b54;
 $bg-color: #f5f5f5;
 $spacing: 1rem;
 
-
 // display
 @mixin named-grid($name, $columns, $gutter) {
   .grid_#{$name} {
@@ -28,9 +27,9 @@ $spacing: 1rem;
   flex-direction: #{$direction};
 }
 
-
 @mixin container($width, $direction) {
-    @include display-flex($direction);
+  @include display-flex($direction);
+
   width: #{$width};
   margin: 0 auto;
 }
