@@ -1,17 +1,11 @@
 Rails.application.routes.draw do
 
-  authenticated :user do
-    root 'categories#index', as: :authenticated_root
-  end
-
-  unauthenticated do
-    root "splash_screen#index"
-  end
-
+  resources :splash_screen, only: [:index]
   devise_for :users
 
   resources :categories, only: %i[index new create show] do
     resources :transacts, only: %i[index new create]
   end
 
+  root "splash_screen#index"
 end
