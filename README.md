@@ -9,6 +9,12 @@ Additional description about the project and its features.
 
 ![app](./app/assets/images/budget-app.png)
 
+## Link to App
+
+- [Bugdet-app](https://still-sands-98528.herokuapp.com/)
+
+## Built With
+
 ## Built With
 
 - Major language
