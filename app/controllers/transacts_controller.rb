@@ -1,7 +1,7 @@
 class TransactsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!
-  before_action :set_transact, only: %i[ show edit update destroy ]
+  before_action :set_transact, :set_select_collections, only: %i[ show edit update destroy ]
 
   # GET /transacts or /transacts.json
   def index
@@ -17,8 +17,8 @@ class TransactsController < ApplicationController
 
   # GET /transacts/new
   def new
-    @categories = Category.all
     @transact = Transact.new
+    @categories = Category.all
   end
 
   # GET /transacts/1/edit
@@ -75,5 +75,9 @@ class TransactsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def transact_params
       params.permit(:name, :amount, :categories, :category_id)
+    end
+
+    def set_select_collections
+      @categories = Category.all.map { |c| [ c.name, c.id ] }
     end
 end
