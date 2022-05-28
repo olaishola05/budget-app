@@ -6,12 +6,17 @@
     </div>
     <h2>Total: $<%= @transacts.map {|t| t.amount}.sum %></h2>
 
-    <h3>Transactions:</h3>
-    <div id="transacts">
-      <% @transacts.each do |transact| %>
-        <%= render transact %>
-      <% end %>
-    </div>
+    <% if @transacts.empty?%>
+        <p class='msg'>No transactions for this category, click below button to add new transact.</p>
+      <%else%>
+        <h3>Transactions:</h3>
+        <div id="transacts">
+          <% @transacts.each do |transact| %>
+            <%= render transact %>
+          <% end %>
+        </div>
+    <%end%>
+
     <% if can? :create, Transact%>
         <div class='btn-container'>
           <button class='add-btn'><%= link_to "New transact", new_category_transact_path %></button>

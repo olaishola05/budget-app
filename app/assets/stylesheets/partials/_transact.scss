@@ -50,6 +50,12 @@
         }
     }
 
+    .msg{
+        padding: $spacing;
+        font-style: italic;
+        background-color: #fff;
+    }
+
     .transact-item{
         width: 95%;
         background-color: white;

@@ -15,6 +15,12 @@
         padding-bottom: 5px;
     }
 
+    .msg{
+        padding: $spacing;
+        font-style: italic;
+        background-color: #fff;
+    }
+
     .category{
         width: 95%;
         margin: 0 auto;
@@ -48,7 +54,7 @@
     .btn-container{
         background-color: $secondary-color;
         width: 100%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         padding: $spacing;
         display: flex;
