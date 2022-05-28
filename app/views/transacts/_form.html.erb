@@ -24,7 +24,8 @@
 
   <div>
     <%= form.label :categories %>
-    <%= form.select :category_id, @categories.map{ |category| [category.name, category.id] } %>
+    <%=form.select(:category_id, @categories.map{ |category| [category.name, category.id] }, :include_blank => "- Choose Catgories -") %>
+
   </div>
 
   <div class='actions'>
