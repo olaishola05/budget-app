@@ -1,12 +1,8 @@
 <div class='categories'>
-    <div class='recents'>
-        <%= button_to 'Most recent'%>
-        <%= button_to 'Most ancient' %>
-    </div>
-
+    <h1>CATEGORIES</h1>
     <div>
         <% if @categories.empty? %>
-            <p>Click below button to add new categories</p>
+            <p class='msg'>Click below button to add new categories</p>
 
         <% else %>
             <% @categories.each do |category|%>
@@ -16,8 +12,8 @@
     </div>
 
     <% if can? :create, Category%>
-        <div>
-             <%= link_to 'Add new category', new_category_path %>
+        <div class='btn-container'>
+             <button type='button' class='add-btn'><%= link_to 'Add new category', new_category_path %></button>
         </div>
     <%end%>
 </div>

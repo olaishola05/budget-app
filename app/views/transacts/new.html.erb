@@ -1,9 +1,12 @@
-<h1>New transact</h1>
+<div class='trans-new'>
 
-<%= render "form", transact: @transact %>
+  <h1>New transact</h1>
 
-<br>
+    <%= render "form", transact: @transact %>
 
-<div>
-  <%= link_to "Back to transacts", category_transacts_path %>
+  <br>
+
+  <div class='back'>
+    <%= link_to "Back", category_transacts_path %>
+  </div>
 </div>

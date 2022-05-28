@@ -6,6 +6,7 @@ class TransactsController < ApplicationController
   # GET /transacts or /transacts.json
   def index
     @user = current_user
+    @category = Category.find(params[:category_id])
     @transacts = Transact.includes(:category).where(category_id: params[:category_id]).order(created_at: :desc)
     @transacts = @transacts.where(user_id: @user.id) if @user
   end
